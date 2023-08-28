@@ -16,6 +16,11 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->string('avatar')->default(config('chatify.user_avatar.default'));
+            $table->string('messenger_color')->nullable();
+
+            $table->boolean('active_status')->default(0);
+            $table->boolean('dark_mode')->default(0);
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
